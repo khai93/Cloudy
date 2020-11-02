@@ -2,8 +2,10 @@
   "compilerOptions": {
     "module": "commonjs",
     "baseUrl": "./",
+    "rootDir": "./src",
     "outDir": "build",
     "target": "es6",
+    "types": ["node"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "lib": ["es6", "es2015", "dom"],
