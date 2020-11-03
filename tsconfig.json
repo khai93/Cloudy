@@ -5,7 +5,7 @@
     "rootDir": "./src",
     "outDir": "build",
     "target": "es6",
-    "types": ["node"],
+    "types": ["node", "jest"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "lib": ["es6", "es2015", "dom"],
@@ -16,7 +16,7 @@
     "src/**.ts",
     "src/**/**.ts",
     "src/**/**/**.ts",
-    "src/**/**/**/**.ts"
+    "src/**/**/**/**.ts", "src/server/api/middlewares/validate/validate.js"
   ],
   "exclude": [
     "./src/client"

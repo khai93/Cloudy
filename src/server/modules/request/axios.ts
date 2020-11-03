@@ -9,8 +9,9 @@ export class AxiosRequestModule implements IRequestModule {
         this._client = axios.create(this.convertToAxiosOpts(options));
     }
 
-    public request<R>(options: RequestOptions): Promise<R> {
-        return this._client.request(this.convertToAxiosOpts(options));
+    public async request<R>(options: RequestOptions): Promise<R> {
+        const requested = await this._client.request(this.convertToAxiosOpts(options));
+        return requested.data;
     }
 
     private convertToAxiosOpts(options: RequestOptions): AxiosRequestConfig {
