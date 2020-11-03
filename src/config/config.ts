@@ -13,7 +13,7 @@ export const config = {
 
 export function validateVariable(varName: string): string  {
     if (varName in process.env) {
-        return varName;
+        return process.env[varName];
     } else {
         throw new Error(`${varName} is a required env variable and was not found!`);
     }

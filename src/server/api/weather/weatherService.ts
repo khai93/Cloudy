@@ -1,7 +1,7 @@
 import { config } from '../../../config/config';
 import { Logger } from "src/server/logger/logger";
-import { IRequestModule } from "../modules/request/IRequestModule";
-import { RequestOptions } from "../modules/request/RequestOptions";
+import { IRequestModule } from "../../modules/request/IRequestModule";
+import { RequestOptions } from "../../modules/request/RequestOptions";
 
 export type WeatherServiceDependencies = {
     requestModule: IRequestModule,

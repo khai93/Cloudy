@@ -6,7 +6,7 @@ import { readdir } from 'fs/promises';
 import { ControllerUtility } from "../utils/controllers";
 import { WeatherController } from "./weather/weatherController";
 import { WeatherService } from "./weather/weatherService";
-import { RequestModule } from "./modules/request";
+import { RequestModule } from "../modules/request";
 
 const logger = new Logger();
 
