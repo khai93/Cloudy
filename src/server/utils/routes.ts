@@ -27,9 +27,8 @@ export class RouteUtility {
                 const routeModule = await import(this.dependencies.pathJoin(params.routesPath, `${route}`));
                 
                 const routeObj = new routeModule.default({ 
-                    router: params.router, 
-                    parentDependencies: params.parentDependencies 
-                });
+                    router: params.router                    
+                }, params.parentDependencies);
 
                 routeObj.execute();
 

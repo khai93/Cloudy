@@ -2,10 +2,12 @@ import { Router } from "express";
 import { Logger } from "src/server/logger/logger";
 import { ControllerUtility } from "src/server/utils/controllers";
 import { IController } from "../IController";
+import { WeatherService } from "./weatherService";
 
 export type WeatherControllerDependencies = {
     controllerUtility: ControllerUtility,
-    logger: Logger
+    logger: Logger,
+    weatherService: WeatherService
 }
 
 export class WeatherController implements IController {
