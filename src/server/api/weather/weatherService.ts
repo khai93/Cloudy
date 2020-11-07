@@ -70,9 +70,8 @@ export class WeatherService {
 
     public async getOneCallData(location: Location, units: Units): Promise<OneCallResponse>  {
         try {
-      
-            const oneCallUrl = new URL(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&exclude=hourly,minutely&appid=${config.openweather.apiKey}`);
-        
+            const oneCallUrl = new URL(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=${units}&exclude=hourly,minutely&appid=${config.openweather.apiKey}`);
+
             const options: RequestOptions = {
                 url: oneCallUrl.toString()
             }

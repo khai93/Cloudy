@@ -1,0 +1,23 @@
+.weatherF__main {
+    background-color: whitesmoke;
+    margin: 50px;
+    padding: 10px 20px;
+    width: 600px;
+}
+
+
+.weatherF__main h2 {
+    padding: 0;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.weatherF__main h3 {
+    margin: 0;
+    font-weight: lighter;
+}
+
+.weatherF__currentWeather {
+    margin-top: 0;
+    font-weight: normal !important;
+}

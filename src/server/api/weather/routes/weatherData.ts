@@ -7,7 +7,8 @@ import { Location, Units } from "../weatherService";
 
 const weatherDataRouteValidations = [
    query('long').exists().isFloat(),
-   query('lat').exists().isFloat()
+   query('lat').exists().isFloat(),
+   query('units').exists()
 ];
 
 export default class weatherData implements IExecuteable {
@@ -20,11 +21,11 @@ export default class weatherData implements IExecuteable {
       this.dependencies.router.get('/data', ...Validate(weatherDataRouteValidations), async (req, res) => {
          try {
             const location: Location = {
-               longitude: parseInt(req.query.long),
-               latitude: parseInt(req.query.lat),
+               longitude: parseFloat(req.query.long),
+               latitude: parseFloat(req.query.lat),
             }
 
-            const units: Units = req.params.units as Units || 'imperial';
+            const units: Units = req.query.units as Units || 'imperial';
 
             const data = await this.parentDependencies.weatherService.getOneCallData(location, units);
            
