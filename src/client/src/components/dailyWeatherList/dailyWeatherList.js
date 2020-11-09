@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import DailyWeather from '../dailyWeather';
 
+import './dailyWeatherList.css'
+
 export default function DailyWeatherList(props) {
     const weatherData = props.weatherData;
     const [dailyWeatherData, setDailyWeatherData] = useState([]);

@@ -5,4 +5,9 @@
 
 .dailyWeather__main > label {
     display: block;
+    font-weight: lighter;
+}
+
+.dailyWeather__day {
+    font-weight: medium;
 }

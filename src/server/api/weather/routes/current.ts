@@ -24,7 +24,7 @@ export default class CurrentWeatherRoute implements IExecuteable {
             }
 
             const data = await this.parentDependencies.weatherService.getCurrentData(location);
-           
+
             res.send(data);
          } catch (e) {
             this.parentDependencies.logger.error(e);

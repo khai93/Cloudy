@@ -21,16 +21,16 @@ export default function DailyWeather(props) {
 
 
     const weatherIcon = currentTimeFrame.icon_url;
-
+    const days = ['Sun', 'Mon', "Tue", 'Wed', 'Thu', 'Fri', 'Sat'];
 
     const weatherIconElement = <img className="dailyWeather__icon" src={weatherIcon}></img>
   
     return (
         <div className="dailyWeather__main">
-            <label className="dailyWeather__day">{weatherTime.getDay()}</label>
+            <label className="dailyWeather__day">{days[weatherTime.getDay()]}</label>
             {weatherIconElement}
-            <label className="dailyWeather__temp">{weatherTempFah} &#176;</label>
-            <label className="dailyWeather__feelsLike">{weatherTempCel} &#176;</label>
+            <label className="dailyWeather__temp">{weatherTempFah} F&#176;</label>
+            <label className="dailyWeather__feelsLike">{weatherTempCel} C&#176;</label>
         </div>
     )
 } 

@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './currentWeather.css';
 
 export default function CurrentWeather(props) {
-    const degreeSymbol = props.degreeSymbol || <span> &#8457; </span>;
-    const weatherIcon = props.weatherIcon || '10d';
+    const currentWeatherData = props.currentWeatherData;
 
-    const weatherIconElement = <img className="currentW__weatherIcon" src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`}></img>
+    const weatherIconElement = <img className="dailyWeather__icon" src={currentWeatherData.icon_url}></img>
+    
+    const temp = currentWeatherData.hasOwnProperty('temp') && Math.floor(currentWeatherData.temp.fah)
+    const wind_speed = currentWeatherData.hasOwnProperty('wind_speed') && currentWeatherData.wind_speed.mph;
     return (
         <div className="currentW__main">
             <div>
                 {weatherIconElement} 
-                <label>52 { degreeSymbol }</label>
+                <label>{temp} &#8457;</label>
             </div>
             <div>
-                <span>Precipitation: 2%</span>
-                <span>Humidity: 74%</span>
-                <span>Wind: 9%</span>
+                <span>Humidity: {currentWeatherData.humidity_level}%</span>
+                <span>Wind: {wind_speed} mph</span>
             </div>
         </div>
     )
