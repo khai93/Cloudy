@@ -2,7 +2,7 @@ import express, { Express, Request, Response, Router } from 'express';
 import { ServerBuilder } from './server-builder';
 import path from 'path';
 import cors from 'cors';
-import { IController } from './api/IController';
+import { IController } from './api/types';
 
 export class Server {
     private _app: Express;

@@ -1,5 +1,4 @@
-import { IExecuteable } from "../../IExecuteable";
-import { RouteDependencies } from "../../RouteDependencies";
+import { IExecuteable, RouteDependencies } from "../../types";
 import { StatusControllerDependencies } from "../statusController";
 
 export default class StatusRoute implements IExecuteable {

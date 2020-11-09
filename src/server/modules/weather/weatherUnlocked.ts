@@ -1,6 +1,6 @@
 import { CurrentDataResponse, ForecastDataResponse, IWeatherModule, Location } from "./types";
 import { IRequestModule, RequestOptions } from '../request/types';
-import { config } from "src/config/config";
+import { config } from "../../../config/config";
 
 export type WeatherUnlockedModuleDependencies = {
     requestModule: IRequestModule
