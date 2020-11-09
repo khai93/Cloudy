@@ -15,6 +15,7 @@ export default function WeatherForecast(props) {
                 .then(res => res.json())
                 .then((result) => {
                     setWeatherData(result);
+                    console.log(result);
                 }, (error) => {
                     alert("An error occured grabbing weather data.");
                 })

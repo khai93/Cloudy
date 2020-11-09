@@ -6,8 +6,9 @@ export const config = {
     server: {
         PORT: parseInt(process.env.PORT) || 8080
     },
-    openweather: {
-        apiKey: validateVariable("OPEN_WEATHER_API_KEY")
+    weather: {
+        apiKey: validateVariable("WEATHER_API_KEY"),
+        appId: validateVariable("WEATHER_APP_ID")
     }
 }
 

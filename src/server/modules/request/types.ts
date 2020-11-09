@@ -13,3 +13,8 @@ export type RequestOptions = {
     httpsAgent?: Agent,
     proxy?: { key: string, value: any }
 }
+
+export interface IRequestModule {
+    request<R>(options: RequestOptions): Promise<R>;
+}
+

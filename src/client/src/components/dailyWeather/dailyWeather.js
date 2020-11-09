@@ -5,10 +5,7 @@ import './dailyWeather.css'
 export default function DailyWeather(props) {
     const dailyData = props.data;
 
-    console.log(dailyData);
-
     const weatherTime = new Date(dailyData.dt);
-    console.log(weatherTime);
     const weatherTemp = dailyData.temp.day;
     const weatherFeelsLike = dailyData.feels_like.day;
     const weatherIcon = dailyData.weather.icon || '10d';

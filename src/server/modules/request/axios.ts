@@ -1,12 +1,15 @@
 import axios, { AxiosRequestConfig, Method, AxiosInstance } from 'axios';
-import { IRequestModule } from './IRequestModule';
-import { RequestOptions } from './RequestOptions';
+import { IRequestModule, RequestOptions } from './types';
 
 export class AxiosRequestModule implements IRequestModule {
     private _client: AxiosInstance;
 
-    constructor(options: RequestOptions) {
-        this._client = axios.create(this.convertToAxiosOpts(options));
+    constructor(options?: RequestOptions) {
+        if (options) {
+            this._client = axios.create(this.convertToAxiosOpts(options));
+        }
+
+        this._client = axios.create({});
     }
 
     public async request<R>(options: RequestOptions): Promise<R> {
