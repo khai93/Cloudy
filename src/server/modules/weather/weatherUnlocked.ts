@@ -79,7 +79,7 @@ export class WeatherUnlockedModule implements IWeatherModule {
     private convertToForecastDataResponse(response: any): ForecastDataResponse {
         const forecastData: ForecastDataResponse = {
             days: response.Days.map(day => ({
-                date: day.date,
+                date: this.convertToNormalDate(day.date),
                 temp: {
                     max: {
                         cel: day.temp_max_c,
@@ -104,7 +104,7 @@ export class WeatherUnlockedModule implements IWeatherModule {
                 },
                 precipitation_probablility: day.prob_precip_pct,
                 time_frames: day.Timeframes.map((timeframe) => ({
-                    date: timeframe.date,
+                    date: this.convertToNormalDate(timeframe.date),
                     time: timeframe.time,
                     utc_date: timeframe.utcdate,
                     utc_time: timeframe.utctime,
@@ -147,5 +147,10 @@ export class WeatherUnlockedModule implements IWeatherModule {
         }
 
         return forecastData;
+    }
+
+    private convertToNormalDate(date: string) {
+        const splitDate = date.split('/');
+        return `${splitDate[1]}/${splitDate[0]}/${splitDate[2]}`;
     }
 }

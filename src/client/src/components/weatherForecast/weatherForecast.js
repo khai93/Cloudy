@@ -7,11 +7,10 @@ import './weatherForecast.css';
 export default function WeatherForecast(props) {
 
     const [weatherData, setWeatherData] = useState({});
-    const [units, setUnits] = useState('imperial');
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(pos) {
-            fetch(`http://localhost:8080/api/weather/data?lat=${pos.coords.latitude}&long=${pos.coords.longitude}&units=${units}`)
+            fetch(`http://localhost:8080/api/weather/forecast?lat=${pos.coords.latitude}&long=${pos.coords.longitude}`)
                 .then(res => res.json())
                 .then((result) => {
                     setWeatherData(result);
