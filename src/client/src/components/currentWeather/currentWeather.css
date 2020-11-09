@@ -1,0 +1,29 @@
+.currentW__main {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+}
+
+.currentW__main label {
+    font-size: 48px;
+    margin: 0;
+    flex: 1;
+}
+
+.currentW__main label > span {
+    font-size: 25px;
+}
+
+.currentW__main > div {
+    flex: 1;
+}
+
+.currentW__weatherIcon {
+    height: 60px;
+}
+
+.currentW__main > div > span {
+    display: block;
+    color: black;
+    font-weight: lighter;
+}

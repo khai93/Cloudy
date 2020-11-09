@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { IExecuteable } from "../api/IExecuteable";
+import { IExecuteable } from "../api/types";
 import { Logger } from "../logger/logger";
 
 export type RouteUtilityDependencies = {

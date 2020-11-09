@@ -1,7 +1,8 @@
 import express, { Express, Request, Response, Router } from 'express';
 import { ServerBuilder } from './server-builder';
 import path from 'path';
-import { IController } from './api/IController';
+import cors from 'cors';
+import { IController } from './api/types';
 
 export class Server {
     private _app: Express;
@@ -17,6 +18,8 @@ export class Server {
     }
 
     public start() {
+        this._app.use(cors());
+
         if (this._env == 'production') {
             this._app.use(express.static(path.resolve("./") + "/build/client"));
             
