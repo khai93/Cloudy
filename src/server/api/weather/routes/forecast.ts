@@ -1,7 +1,6 @@
 import { param, query } from 'express-validator';
-import { IExecuteable } from "../../IExecuteable";
+import { IExecuteable, RouteDependencies } from "../../types";
 import { Validate } from '../../middlewares/validate/validate';
-import { RouteDependencies } from "../../RouteDependencies";
 import { WeatherControllerDependencies } from "../weatherController";
 import { Location } from 'src/server/modules/weather/types';
 
