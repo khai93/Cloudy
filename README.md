@@ -1,2 +1,2 @@
-# Typescript React Express OOP starter
-Starter project
+# Cloudy
+Project that tells the weather forecast
