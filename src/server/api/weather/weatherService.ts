@@ -1,5 +1,5 @@
 import { config } from '../../../config/config';
-import { Logger } from "src/server/logger/logger";
+import { Logger } from "src/server/modules/logger/logger";
 import { IWeatherModule, Location } from 'src/server/modules/weather/types';
 
 export type WeatherServiceDependencies = {

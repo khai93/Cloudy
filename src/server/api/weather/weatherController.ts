@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Logger } from "src/server/logger/logger";
+import { Logger } from "src/server/modules/logger/logger";
 import { ControllerUtility } from "src/server/utils/controllers";
 import { IController } from "../types";
 import { WeatherService } from "./weatherService";
